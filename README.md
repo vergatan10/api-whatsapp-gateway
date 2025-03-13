@@ -1,12 +1,11 @@
 # 🔥 API Whatsapp 🔥
 
-___
 
 API Whatsapp Gateway sederhana untuk mengirim pesan dan menyimpan sesi, ditujukan untuk programmer yang ingin membuat API menggunakan `NodeJS` dengan `ExpressJS`, menggunakan library `@whiskeysockets/baileys` untuk dapat terkoneksi ke Whatsapp dan mengirim pesan melalui API yang disediakan.
 
 ## 1.Instalasi dan Menjalankan Server
 
-```json
+```bash
 npm install
 npm start
 ```
