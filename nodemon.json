@@ -1,0 +1,5 @@
+{
+    "watch": ["*.js", "config", "routes"],
+        "ignore": ["sessions/*", "apikeys.json"],
+            "ext": "js,json"
+}

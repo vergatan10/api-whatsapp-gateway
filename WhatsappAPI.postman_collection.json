@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e87dbe97-f106-428a-ac53-fe6435aa03ef",
+		"_postman_id": "f6f90709-3c82-4eba-bc23-6d01959f3c4f",
 		"name": "WhatsappAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20980702"
@@ -22,7 +22,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"sessionId\": \"sesi_custom\",\r\n  \"description\": \"Deskripsi sesi\"\r\n}",
+					"raw": "{\r\n  \"sessionId\": \"sesi_baru\",\r\n  \"description\": \"Deskripsi sesi\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,77 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sessionId\": \"sesi_baru\",\r\n  \"description\": \"Deskripsi sesi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/session/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"session",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "161"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a1-SR+FsEmTvI6/Dj+j6EUNyBgDJgI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 14:54:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"sessionId\": \"sesi_baru\",\n    \"apiKey\": \"a4d25f08e886abe404c3b92c18e9cbcb\",\n    \"message\": \"Sesi berhasil dibuat. Gunakan API key untuk operasi selanjutnya.\"\n}"
+				}
+			]
 		},
 		{
 			"name": "getQRCode",
@@ -59,7 +129,7 @@
 					},
 					{
 						"key": "x-api-key",
-						"value": "7dba471168e1743cd069187ebabf66c5",
+						"value": "{{apikey}}",
 						"type": "text"
 					}
 				],
@@ -76,7 +146,73 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/session/qr",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"session",
+								"qr"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "6360"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18d8-tqhamfvMvRdoOqqsUJra74LKx9w\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 14:54:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"connected\": false,\n    \"qr\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARQAAAEUCAYAAADqcMl5AAAAAklEQVR4AewaftIAABIqSURBVO3BQY7gRpIAQXei/v9lXx3jlADBrFZrNszsH6y11gUPa611ycNaa13ysNZalzystdYlD2utdcnDWmtd8rDWWpc8rLXWJQ9rrXXJw1prXfKw1lqXPKy11iUPa611ycNaa13ysNZal/zwkcqfVHGiclIxqUwVb6icVJyovFExqbxRcaIyVZyoTBWTylTxhspUMancVDGpTBUnKlPFpHJSMan8SRVfPKy11iUPa611ycNaa13yw2UVN6mcqEwVk8pNKm+ovFHxRcWkcqIyVUwqU8VUMalMFScqU8VUMalMFW+onKhMFScqf1LFTSo3Pay11iUPa611ycNaa13ywy9TeaPiN6l8UXGTyqRyUvFGxRsqJypTxRsqb6hMFZPKGxWTylRxojJVnKj8JpU3Kn7Tw1prXfKw1lqXPKy11iU//D9XMamcVEwqX1RMKlPFGypvVEwqU8WJylQxqbyhMlVMKm9UTConKicVk8pUcVIxqfwveVhrrUse1lrrkoe11rrkh/+4ipOKSWVSmSpOVN6oeKPii4oTlUnlROUNlaniT6qYVKaK36RyojJV/C95WGutSx7WWuuSh7XWuuSHX1bxN6v4m6lMFScqU8VUMalMFW+onKhMFZPKFxWTylRxojJVfFExqUwVN1X8TR7WWuuSh7XWuuRhrbUu+eEylT9JZaqYVKaKSWWqmFSmikllqphUpopJZar4omJSmSreUJkqTiomlTcqJpWpYlKZKiaVqeINlaniJpWp4kTlb/aw1lqXPKy11iUPa611yQ8fVfxNVKaKSWWqmFSmikllqphUpopJZaqYVG6qmFTeqPii4qRiUpkqTireUPlNKlPFScVJxX/Jw1prXfKw1lqXPKy11iU/fKQyVdykMlWcVLyhMlWcVPymikllUjlRmSqmikllUrlJ5U9SOak4UZkqJpUvVL6oOFF5o+Kmh7XWuuRhrbUueVhrrUvsH/wilZOKP0nlpopJZaqYVN6oeEPlpGJSmSomld9UMan8popJ5Y2KE5V/U8WJylRx08Naa13ysNZalzystdYlP/xhFW+onFS8UXGi8kXFFxWTylQxqUwVk8qkcqIyVUwqU8UXKicVk8obFScVX6icVJyoTBWTylQx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Kt5QmSomlZOKSWWqOFF5Q+WLiknlNz2stdYlD2utdcnDWmtd8sMfpjJVnFRMKlPFScWk8psqvlCZKr5QmSreUDmpOKmYVKaKE5U3KiaVE5WTikllqviTKiaVLypuelhrrUse1lrrkoe11rrkh8sqTlQmlROVN1SmiqniDZWp4g2VNyomlZtUTipOKiaVNyomlTcqJpU3KiaVqWJSmSomlanii4o3KiaVN1Smii8e1lrrkoe11rrkYa21LrF/8IHKScWJyknFicoXFZPKTRVfqPxJFV+oTBWTylQxqUwVk8pUcaJyUjGpTBUnKicVk8obFf8lD2utdcnDWmtd8rDWWpf88MtUTiomlUnlpGJSmSomlTcqJpWTikllqjhReaNiUvlC5YuKLyq+UJkqTlSmikllqrip4kRlqjhRmSomlanipoe11rrkYa21LnlYa61LfrisYlI5UZkq/iSVqeJvVnFScaIyVXyhMqlMFVPFpPKFylTxm1ROKiaVN1SmihOVE5WpYlKZKr54WGutSx7WWuuSh7XWuuSHX1ZxojKpfFFxUnGiMlVMFScqb6h8oXKTyhsVJypvVNykclJxUjGp3KRyonJScaLyJz2stdYlD2utdcnDWmtd8sNfpuILlaliUjmpmFSmikllqnijYlKZKiaVqeINlUnljYoTlaliUpkqJpWp4kTljYoTlaliqphUJpWp4g2VL1Smij/pYa21LnlYa61LHtZa65IfPqqYVN6omFTeqDhROan4TSpTxUnFFypTxUnFn1QxqXxRMalMFScqU8VNKm9UTConKlPFv+lhrbUueVhrrUse1lrrkh8+UnmjYlKZKk5U3qiYVN6oOKn4L1P5ouJE5aRiUplUTipOVKaKN1ROKiaVk4pJ5aTiDZWpYlL5TQ9rrXXJw1prXfKw1lqX/HBZxYnKVHGi8kbFpHKi8kbFpPKGyhsVJypvVLyhMlV8UTGpTBU3VUwqU8WkMlWcqLyhcqIyVUwqf7OHtda65GGttS55WGutS374qGJSmSqmiknlpOJEZao4qThRmSomlaniRGWqOFH5ouKmihOVk4pJZaqYVN6oOFGZKt5QuaniROVPqrjpYa21LnlYa61LHtZa65IfPlKZKt6omFQmlZOKSeUNlROVqWJSmSqmihOVqeKNikllqvhC5aaKk4pJ5YuKLypOVE4qJpWTikllqphU3qiYVKaKLx7WWuuSh7XWuuRhrbUu+eGjikllqvii4kRlqphUTiomlaniJpWpYlKZKt6oOFG5qeJEZaqYVKaKN1ROVE4q3lA5qTipmFQmlaliUpkqJpU3Km56WGutSx7WWuuSh7XWuuSHj1SmihOVN1R+k8pUcaIyVUwqU8VvUpkqJpWpYlL5QuUmlaliUnmj4kRlqphUpopJ5UTlpGJSmVROVKaKSeWNii8e1lrrkoe11rrkYa21LrF/8ItUpopJZar4QuWNiknlpGJSOak4UZkqTlROKt5QeaNiUjmpmFTeqHhD5aaKE5WTihOVLyr+Jg9rrXXJw1prXfKw1lqX/PCHqZyovFExVZyovFExqUwVk8qJyonKVDFVTCqTyhsVb6hMFScqJxUnKm9UvKFyU8Wk8kbFpPKGyhcVXzystdYlD2utdcnDWmtd8sNHKm9UTCpTxYnKGyonKl+onKh8oXJSMamcVJyoTBVTxaTymyomlaniDZWpYlI5UZkqblKZKk5U3qj4TQ9rrXXJw1prXfKw1lqX2D/4QOWLihOVNyomlaniDZWTit+kMlVMKlPFGyo3VZyofFFxojJVfKHyX1Lxb3pYa61LHtZa65KHtda6xP7Bf5jKv6liUpkq3lD5omJSeaPiDZWTiknljYpJZaqYVG6qmFSmii9Upoo3VL6ouOlhrbUueVhrrUse1lrrkh8+UvmTKqaKSeWkYlI5qThROVF5o2JSOal4o2JSOVGZKk4qTiomlROVE5U3KiaVv5nKVPFGxYnKVPHFw1prXfKw1lqXPKy11iU/XFZxk8obFZPKpHJS8ZsqJpWbVE5U3qj4QmWqmCpOVN6omFTeqJhU3lCZKiaVNyreqPg3Pay11iUPa611ycNaa13ywy9TeaPiC5WTipsqJpUTlanipGJSeaNiUjlR+ULlROWmiknlRGWqmFROKiaVE5WpYlKZVG5SmSp+08Naa13ysNZalzystdYlP/yPqXhD5aTii4pJ5URlqpgqJpWpYlI5qThR+U0Vk8pJxaTyRsUXKr+p4g2VSeXf9LDWWpc8rLXWJQ9rrXXJD/9jVKaKNyomlZOKqWJSmSomlROVLyomlTcq3lB5Q2WqmFROKiaVN1ROKt5QeaPiROWkYlKZKv6kh7XWuuRhrbUueVhrrUt++GUV/yaVqWKqmFROKt6oOKl4Q+VEZao4UZkqTlS+qPhNFZPKpHJScaIyVbyhMlW8UfE3e1hrrUse1lrrkoe11rrkh8tU/iSVqeJEZaqYKk5U3qi4qWJSOVGZKiaVmyreUPlC5aTiROVE5URlqphUpopJZaqYKiaVqWKqmFSmit/0sNZalzystdYlD2utdYn9g7XWuuBhrbUueVhrrUse1lrrkoe11rrkYa21LnlYa61LHtZa65KHtda65GGttS55WGutSx7WWuuSh7XWuuRhrbUueVhrrUse1lrrkv8DAfwkNm87OdMAAAAASUVORK5CYII=\"\n}"
+				}
+			]
 		},
 		{
 			"name": "cekStatus",
@@ -88,7 +224,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "7dba471168e1743cd069187ebabf66c5",
+						"value": "{{apikey}}",
 						"type": "text"
 					}
 				],
@@ -105,7 +241,68 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "success - connected false",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/session/status",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"session",
+								"status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-D8V8FNEMmCUUHf/fZbVK+93DvRw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 14:55:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"connected\": false\n}"
+				}
+			]
 		},
 		{
 			"name": "sendMessage",
@@ -117,7 +314,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "7dba471168e1743cd069187ebabf66c5",
+						"value": "{{apikey}}",
 						"type": "text"
 					}
 				],
@@ -142,7 +339,76 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"to\": \"6287789645701\", // Nomor tujuan (tanpa @s.whatsapp.net)\r\n  \"message\": \"Halo, ini pesan dari API!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/send",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"send"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "84"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"54-03DG1ZzUKT/hKnCQKOmbkVCXJbU\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 14:55:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Sesi belum terautentikasi. Scan QR code terlebih dahulu.\"\n}"
+				}
+			]
 		},
 		{
 			"name": "logOut",
@@ -154,7 +420,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "7dba471168e1743cd069187ebabf66c5",
+						"value": "{{apikey}}",
 						"type": "text"
 					}
 				],
@@ -293,6 +559,35 @@
 					"body": "{\n    \"success\": false,\n    \"error\": \"API key tidak valid\"\n}"
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apikey",
+			"value": "",
+			"type": "default"
 		}
 	]
 }

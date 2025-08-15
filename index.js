@@ -195,5 +195,4 @@ if (!fs.existsSync(config.sessionPath)) {
 const PORT = config.port;
 app.listen(PORT, () => {
   console.log(`Server berjalan di port ${PORT}`);
-  console.log(`API Key default: ${config.apiKey}`);
 });
