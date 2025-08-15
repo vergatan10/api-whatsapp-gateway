@@ -9,6 +9,7 @@ const loadApiKeys = () => {
   try {
     if (fs.existsSync(API_KEYS_FILE)) {
       const data = fs.readFileSync(API_KEYS_FILE, "utf8");
+      if (!data.trim()) return {};
       return JSON.parse(data);
     }
     return {};
